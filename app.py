@@ -27,7 +27,6 @@ def getAll():
 @app.get('/incomeStatement')
 def incomeStatement():
     fd = FundamentalData(key = os.getenv('API_KEY'))
-    # Get Company Overview
     # ticker example 'AAPL'
     ticker = request.args.get('ticker')
     result = fd.get_income_statement_annual(symbol=ticker)
@@ -38,7 +37,6 @@ def incomeStatement():
 @app.get('/cashFlow')
 def cashFlow():
     fd = FundamentalData(key = os.getenv('API_KEY'))
-    # Get Company Overview
     # ticker example 'AAPL'
     ticker = request.args.get('ticker')
     result = fd.get_cash_flow_annual(symbol=ticker)
